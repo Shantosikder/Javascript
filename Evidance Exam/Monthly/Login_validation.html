@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Validation</title>
+</head>
+<body>
+    <script>
+        function validate(){
+            var username = document.login.username.value.length;
+            var pass = document.login.password.value.length;
+            var status = false;
+
+            if(username < 6){
+                alert("Your name must be 6 chacecter");
+                return false;
+            }else{
+                status = true;
+            }
+            if(pass < 8){
+                alert("Your password is must be 8 cherecter");
+                return false;
+            }else{
+                status = true;
+            }
+            if(status==true){
+                alert("Your login is validate");
+            }
+        }
+    </script>
+
+    <center>
+        <h2>Login Form Validation:</h2>
+        <form name="login">
+            <label for="">Name:</label>
+            <input type="text" name="username" placeholder="Enter your name">
+            <br>
+            <br>
+            <label for="">password:</label>
+            <input type="text" name="password" placeholder="Enter your password">
+            <br>
+            <br>
+            <input type="button" name="submit" value="Login" onclick="validate()">
+        </form>
+    </center>
+    
+</body>
+</html>

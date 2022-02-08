@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Termary</title>
+</head>
+<body>
+	
+	<h1 id="abc"></h1>
+
+	<script type="text/javascript">
+
+		function fullName(){
+
+		var f = document.getElementById('fname').value;
+		var l = document.getElementById('lname').value;
+		var full = "Your full name is :" + f + " " + l;
+		document.getElementById('abc').innerHTML = full;
+
+			}
+	</script>
+
+<form>
+
+	<input type="text" id="fname"><br>
+	<br>
+	<input type="text" id="lname"><br>
+	<br>
+	<input type="button" value="Show" onclick="fullName()">
+	
+</form>
+
+</body>
+</html>

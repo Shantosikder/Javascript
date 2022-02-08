@@ -1,0 +1,259 @@
+***Factrila Number :
+
+<form action="" name="myform">
+    <h1>Enter Number:</h1>
+    <input type="text" name="factrial">
+    <br>
+    <br>
+    <input type="button" value="check" onclick="fact()">
+</form>
+
+<script>
+    function fact(){
+        var x = document.myform.factrial.value;
+        var factrial = 1;
+        for(i = 1; i<=x; i++){
+            factrial*=i;
+        }
+        document.getElementById('demo').innerHTML = "Factrial Number is : "+factrial;
+    }
+</script>
+
+***Email Validation:
+
+ <center>
+		<form name="myForm" >
+			Email ID: <input type="text" name="email" placeholder="Enter Email ID"/><br/><br/>
+			Password: <input type="password" name="pass" placeholder="Enter your password">
+			<br><br>
+			<input type="button" value="save" onclick="validate()" />
+		</form>
+	</center>
+
+  <!-------Js email validation------->
+
+  <script>
+      function validate(){
+          var mail = document.myForm.email.value;
+          var passw = document.myForm.pass.value.length;
+          var etype = mail.search(/[A-z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,4}/);
+          var status = false;
+
+          if(etype==-1){
+              alert("Email Address is invalid");
+              return false;
+          }else{
+              status = true;
+          }
+          if(passw<6){
+              alert("Password is must be 6 digit");
+              return false;
+          }else{
+              status = true;
+          }
+          if(status==true){
+              alert("all data is validate");
+          }
+      }
+  </script>
+
+***New Window form validation:
+
+ <table>
+        <form action="" name="myform">
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="sname" placeholder="Enter your name"></td>
+            </tr>
+            <tr>
+                <td>Contact:</td>
+                <td><input type="text" name="number" placeholder="Enter your number"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+               <td><input type="text" name="email" placeholder="Enter your email"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="password" placeholder="Enter your password"></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    Male<input type="radio" name="gender" value="Male">
+                    Female<input type="radio" name="gender" value="Female">
+                </td>
+            </tr>
+            <tr>
+                <td>Course:</td>
+                <td>
+                    PHP <input type="checkbox" value="PHP" name="course[]">
+
+                    Python <input type="checkbox" value="Python" name="course[]">
+
+                    Java <input type="checkbox" value="Java" name="course[]">
+
+                    C <input type="checkbox" value="C" name="course[]">
+
+                    JavaScript <input type="checkbox" value="JavaScript" name="course[]">
+                </td>
+            </tr>
+            <tr>
+                <td>Location:</td>
+                <td>
+                    <select name="loca" id="">
+                        <option value="mirpur">Mirpur-2</option>
+                        <option value="Mirpur-10">Mirpur-10</option>
+                        <option value="Gulshan">Gulshan</option>
+                        <option value="mirpur-6">Mirpur-6</option>
+                    </select>
+                </td>
+            </tr>
+        </form>
+    </table>
+    <br>
+    <input type="button" value="Open" onclick="getdata()">
+    <input type="button" value="Close" onclick="closedata()">
+
+    <script>
+
+        var newwin;
+
+        function getdata(){
+
+            var name = document.myform.sname.value;
+            var contact = document.myform.number.value;
+            var email = document.myform.email.value;
+            var pass = document.myform.password.value;
+            var gen = document.myform.gender.value;
+            var loc = document.myform.loca.value;
+            var data = "";
+
+            newwin = window.open("","", " left=200, height=600,with=600");
+
+            var course = document.getElementsByName('course[]');
+            var len = course.length;
+            for( i = 0; i<len; i++){
+                if(course[i].checked){
+                    data += course[i].value;
+                }
+            }
+
+            newwin.document.write( "Your Name: " + name + "<br>");
+            newwin.document.write("Your Number: " + contact + "<br>");
+            newwin.document.write("Your Email: " + email + "<br>");
+            newwin.document.write("Your Password: " + pass + "<br>");
+            newwin.document.write("Your Gender: " + gen + "<br>");
+            newwin.document.write("Your Location: " + loc + "<br>");
+            newwin.document.write("Your Location: " + data + "<br>");
+
+        }
+        function closedata(){
+            newwin.close();
+        }
+    </script>
+
+***Prime Number:
+
+
+<script>
+		function primet(){
+			var x = document.prime.number.value;
+			if(x==0){
+				return "you can not input 0";
+			} else if(x==1){
+				return "1 Is not a prime number";
+			} else if(x==2){
+				return "2 Is a prime number";
+			} else {
+				for(i=2; i<x; i++){
+					if(x%i==0){
+						return x + " Is not a prime number";
+					}
+				}
+				return x + " is a prime number";
+			}
+		}
+	</script>
+	
+		<center>
+
+			<h2> Prime Number:</h2>
+
+	<form name="prime" onsubmit="alert(primet())">
+
+		<input type="text" name="number"><br>
+		<br>
+		<input type="submit" name="submit" value="Check">
+
+	</form>
+		</center>
+
+***Login Validation:
+
+  <script>
+        function validate(){
+            var username = document.login.username.value.length;
+            var pass = document.login.password.value.length;
+            var status = false;
+
+            if(username < 6){
+                alert("Your name must be 6 chacecter");
+                return false;
+            }else{
+                status = true;
+            }
+            if(pass < 8){
+                alert("Your password is must be 8 cherecter");
+                return false;
+            }else{
+                status = true;
+            }
+            if(status==true){
+                alert("Your login is validate");
+            }
+        }
+    </script>
+
+    <center>
+        <h2>Login Form Validation:</h2>
+        <form name="login">
+            <label for="">Name:</label>
+            <input type="text" name="username" placeholder="Enter your name">
+            <br>
+            <br>
+            <label for="">password:</label>
+            <input type="text" name="password" placeholder="Enter your password">
+            <br>
+            <br>
+            <input type="button" name="submit" value="Login" onclick="validate()">
+        </form>
+    </center>
+
+***Grading Check :
+
+<h4>Grading Check:</h4>
+
+ <script>
+
+ var n = parseInt(prompt("Enter the number: ", ""));
+ if(n >= 80){
+
+ document.write("Your Grading  (A+)");
+
+ }else if(n >= 70){
+
+ document.write("Your Grading  (A)");
+
+ }else if(n >= 60){
+
+ document.write("Your Grading  (B)");
+
+ }else{
+
+ document.write("You Fail");
+ }
+
+
+ </script>
+

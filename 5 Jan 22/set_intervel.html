@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Set Interval</title>
+</head>
+<body>
+
+	<!---------Start------------>
+
+	<!-- <script type="text/javascript">
+		function changeimg(){
+			window.setInterval("document.myimage.src='Bird.jpg'");
+		}
+		
+	</script> 
+
+
+
+	<img name="myimage" src="football.jpg" width="250">
+	<br>
+	<br>
+	<button onclick="changeimg()">Click here</button> -->
+
+
+	<!-------End--------->
+
+	<!---------Start------------>
+
+	<!-- <script type="text/javascript">
+		function MouseUp(){
+			document.myimages.src = "Bird.jpg"
+		}
+
+		function MouseDown(){
+			document.myimages.src = "football.jpg"
+		}
+	</script>
+
+<img src="Bird.jpg" name="myimages" width="500" onmouseover="MouseUp()" onmouseout="MouseDown()"> -->
+
+<!----------End-------------->
+
+<!---------Start------------>
+<!-- <script>
+		function changeImage(){
+			window.setInterval("document.myimage.src='Bird.jpg'", 3000);
+		}
+		function anotherChange(){
+			window.setTimeout("document.myimage.src='football.jpg'", 5000);
+			window.clearInterval;
+		}
+	</script>
+
+
+	<img name="myimage" src="football.jpg" height="200" width="200" alt="">
+
+	<button onclick="changeImage()">Click Here</button>
+	<button onclick="anotherChange()">Another Click Here</button>  -->
+
+
+
+<!----------End-------------->
+
+<!---------Start------------>
+
+
+<button onclick="stopColor()">OFF </button>
+
+<script>
+myInterval = setInterval(setColor, 500);
+ 
+function setColor() {
+  let x = document.body;
+  x.style.backgroundColor = x.style.backgroundColor == "yellow" ? "red"  : "yellow" ;
+}
+ 
+function stopColor() {
+  clearInterval(myInterval);
+}
+</script> 
+
+<!----------End-------------->
+
+</body>
+</html>

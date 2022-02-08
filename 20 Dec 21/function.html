@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Function Javascript</title>
+</head>
+<body>
+	<h2 id="show"></h2>
+
+	<script>
+		function fullName(first='', last=''){
+			let welcome = first + " " + last + ", welcome.Today is Monday<br>";
+
+			// document.write(welcome);
+			console.log(welcome);
+			document.getElementById('show').innerHTML = welcome;
+			// return welcome;
+		}
+
+	</script>
+
+	<script>
+
+		// var x = fullName("shanto", "sikder");
+		// document.getElementById('show').innerHTML = x;
+		// fullName("Rana", "Hridoy");
+		// fullName("waliul", "hassan");
+		// fullName("mizanur", "Rahnan");
+		// fullName();
+		// fullName();
+
+	</script>
+	<button onclick="fullName('Shanto', 'sikder');">Click Here</button>
+</body>
+</html>

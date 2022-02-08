@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factrila</title>
+</head>
+<body>
+    <h2 id="demo"></h2>
+
+    <form action="" name="myform">
+        <h4>Enter Number:</h4>
+        <input type="text" name="factrial">
+        <br>
+        <br>
+        <input type="button" value="check" onclick="fact()">
+    </form>
+
+    <!-- <script>
+        function fact(){
+            var x = document.myform.factrial.value;
+            var factrial = 1;
+            for(i=1; i<=x; i++){
+                factrial *= i;
+            }
+            document.getElementById('demo').innerHTML = "Factrial Number: " + factrial;
+        }
+    </script> -->
+
+  <script>
+        function fact(){
+            var x = document.myform.factrial.value;
+            var factrial = 1;
+            for(i=1; i<=x; i++){
+                factrial*=i;
+            }
+        document.getElementById('demo').innerHTML = "Factrila Number: " + factrial;
+    }
+  </script>
+    
+</body>
+</html>

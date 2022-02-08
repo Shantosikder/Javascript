@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>form new window</title>
+	<style type="text/css">
+		.boder{
+			border: 2px solid black;
+			border-radius: 5px;
+			width: 600px;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+
+	<script type="text/javascript">
+
+		var new_win;
+		var cor = [];
+
+		function show_data(){
+		var myform = document.querySelector("myform");
+		var Name = document.myform.name.value;
+		var Contact = document.myform.contact.value;
+		var Remark = document.myform.remark.value;
+		var Gender = document.myform.gender.value;
+		var Course = document.myform.course.value;
+		var Location = document.myform.location.value;
+
+		var Course = document.querySelectorAll("input[type=checkbox]");
+		for( i = 0; i<Course.length; i++){
+			if(Course[i].checked == true){
+				Cor.push(Course[i].value);
+
+			}
+		}
+
+		new_win = window.open(" ", " ", "left=350, right= 350 ,height=400, width=400");
+
+		new_win.document.write("Name :" + Name + "<br>");
+		new_win.document.write("Contact :" + Contact + "<br>");
+		new_win.document.write("Remark :" + Remark + "<br>");
+		new_win.document.write("Gender :" + Gender + "<br>");
+		new_win.document.write("Course :" + cor + "<br>");
+		new_win.document.write("Location :" + Location + "<br>");
+		}
+
+		function close_data(){
+			new_win.close();
+		}
+	</script>
+
+
+<center>
+	<form name="myform" class="boder">
+		<h2>Form With New Window:</h2>
+		<label>Name:</label>
+		<input type="text" name="name" placeholder="Enter your Name">
+		<br>
+		<br>
+		<label>Contact:</label>
+		<input type="number" name="contact" placeholder="Enter your number">
+		<br>
+		<br>
+		<label>Remark:</label><br>
+		<br>
+		<textarea cols="30" rows="10" name="remark" placeholder="Enter your Remark"></textarea>
+		<br>
+		<br>
+		<label>Gender:</label>
+		Male <input type="radio" name="gender">
+		Female <input type="radio" name="gender">
+		<br>
+		<br>
+		<label>Course:</label>
+		PHP<input type="checkbox" name="course">
+		Java<input type="checkbox" name="course">
+		JavaScript<input type="checkbox" name="course">
+		C<input type="checkbox" name="course">
+		C++<input type="checkbox" name="course">
+		C#<input type="checkbox" name="course">
+		<br>
+		<br>
+		<label>Location:</label>
+		<select name="location">
+			<option disabled="Seclect One">Seclect One</option>
+			<option>Mirpur-2</option>
+			<option>Famrget</option>
+			<option>Gulshan</option>
+			<option>Dhanmondi</option>
+		</select>
+		<br>
+		<br>
+		<input type="button" value="open" onclick="show_data()">
+		<input type="button" value="close" onclick="close_data()">
+	</form>
+</center>
+
+</body>
+</html>

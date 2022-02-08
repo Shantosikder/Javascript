@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>With Statment</title>
+</head>
+<body>
+
+	<h1>With Statment:</h1>
+
+	<script type="text/javascript">
+
+
+		function getData(){
+			with(document.myform){
+				var full = fullname.value;
+				var gen = gender.value;
+				var dist = district.value;
+				var add = address.value;
+				//alert(full);
+			}
+			let data = "";
+			data += "Name: " + full + "<br>";
+			data += "Gender: " + gen + "<br>";
+			data += "District: " + dist + "<br>";
+			data += "Address: " + add + "<br><hr>";
+			document.getElementById('show').innerHTML = data;
+		}
+	</script>
+
+	<div id="show"></div>
+
+	<form name="myform">
+		<input type="text" name="fullname" placeholder="Name"><br>
+		<br>
+		<textarea name="address" cols="30" rows="10" placeholder="Address"></textarea><br>
+		Gender:
+		Male <input type="radio" value="Male" name="gender">
+		Female <input type="radio" value="Female" name="gender"><br>
+		<br>
+		District:
+		<select name="district">
+			<option>Dhaka</option>
+			<option>Madaripur</option>
+			<option>Sylhet</option>
+			<option>Gazipur</option>
+			<option>Kumilla</option>
+		</select>
+		<br>
+		<br>
+		<input type="button" value="SENT" onclick="getData()">
+	</form>
+
+</body>
+</html>

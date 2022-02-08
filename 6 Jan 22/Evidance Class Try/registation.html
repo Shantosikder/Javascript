@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Create a student registation form with new window</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+
+		var mywin;
+
+		function win_display(){
+			var Name = document.myform.name.value;
+			var Email = document.myform.email.value;
+			var Address = document.myform.text.value;
+			var Gender = document.myform.gender.value;
+			var Subject = document.myform.subject.value;
+			var Course = document.myform.course.value;
+
+			//alert();
+
+			mywin = window.open("", "", "top= 150, left= 300, height= 400, width= 700");
+
+			mywin.document.write("<h2>New window</h2>");
+
+			mywin.document.write("Name: " + Name + "<br>");
+			mywin.document.write("Email: " + Email + "<br>");
+			mywin.document.write("Address: " + Address + "<br>");
+			mywin.document.write("Gender: " + Gender + "<br>");
+			mywin.document.write("Subject: " + Subject + "<br>");
+			mywin.document.write("Course: " + Course + "<br>");
+
+
+		}
+
+		function win_close(){
+			mywin.close();
+		}
+		
+
+	</script>
+
+	<center>
+
+		<h2>Student Registation Form:</h2>
+		
+		<form name="myform">
+		<label>Name:</label>
+		<input type="text" name="name" placeholder="Enter your name">
+		<br>
+		<br>
+		<label>Email:</label>
+		<input type="text" name="email" placeholder="Enter your Email">
+		<br>
+		<br>
+		<label>Address:</label><br>
+		<textarea cols="30" rows="5" name="text" placeholder="Enter your Address"></textarea>
+		<br>
+		<br>
+		<label>Gender:</label>
+		Male <input type="radio" name="gender" value="Male">
+		Female <input type="radio" name="gender" value="Female">
+		<br>
+		<br>
+		<label>Course:</label>
+		<input type="checkbox" name="course" value="PWAD-50"><span>PWAD-50</span>
+		<input type="checkbox" name="course" value="PWAD-51"><span>PWAD-51</span> 
+		<input type="checkbox" name="course" value="PWAD-52"><span>PWAD-52</span>
+		<br>
+		<br>
+		<label>Subject:</label>
+		<select name="subject">
+			<option>PHP</option>
+			<option>Laravel</option>
+			<option>Pyhton</option>
+			<option>C++</option>
+			<option>C#</option>
+		</select>
+		<br>
+		<br>
+		<button type="button" onclick="win_display()">Open</button>
+		<button type="button" onclick="win_close()">Close</button>
+	</form>
+
+	</center>
+
+	
+</body>
+</html>

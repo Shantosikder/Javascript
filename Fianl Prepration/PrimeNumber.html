@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number </title>
+</head>
+<body>
+
+    <script>
+        function primet(){
+            var x = document.prime.number.value;
+            if(x==0){
+                return "you can not input 0";
+            }else if(x==1){
+                return "1 is not prime number";
+            }else if(x==2){
+                return "2 is not prime number";
+            }else{
+                for(i=2; i<x; i++){
+                    if(x%i==0){
+                        return x + " Is not a prime number";
+                    }
+                }
+                return x +" is a prime number";
+            }
+        }
+    </script>
+
+    <center>
+        <form name="prime" onsubmit="alert(primet())">
+
+            <h2>Prime Number:</h2>
+            
+            <input type="text" name="number" placeholder="Enter number">
+            <br>
+            <br>
+            <input type="submit" name="submit" value="Check">
+        
+            </form>
+    </center>
+    
+</body>
+</html>

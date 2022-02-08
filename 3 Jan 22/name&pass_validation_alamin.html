@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Name & Password Valid</title>
+</head>
+
+<body>
+    <script>
+        function validate(){
+			var userName = document.login.username.value.length;
+			var pass = document.login.password.value.length;
+			var status = false;
+			
+			if(userName < 6){
+				alert ("User Name must be 6 character");
+			 	return false;
+			 } else {
+			 	status = true;
+			 }
+			if(pass < 8){
+				alert ("Password must be 8 character");
+			 	return false;
+			 } else {
+			 	status =  true;
+			 }
+			 if(status==true){
+			 	alert ("All data are validted");
+			 }
+		}
+	</script>
+    <form name="login">
+        <input type="text" name="username" placeholder="Enter valid Username"><br>
+        <input type="password" name="password" placeholder="Enter password"><br>
+        <input type="button" name="submit" value="Login" onclick="validate()">
+    </form>
+</body>
+
+</html>
+

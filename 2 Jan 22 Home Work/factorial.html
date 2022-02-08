@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factrial</title>
+</head>
+<body>
+
+<p id="show"></p>
+
+ <script>
+     
+        var number = prompt("Please enter your factrial number: " , " ");
+       function factrial(number)
+       {
+           if(number == 0)
+           {
+               return 1;
+           }
+
+           return number * factrial(number - 1);
+
+       }
+
+       //document.getElementById('show').innerHTML = factrial(number);
+
+       document.write ( number  + " Enter your factrial value is : "  + factrial(number));
+
+      
+
+    </script> 
+
+    
+  
+    
+</body>
+</html>

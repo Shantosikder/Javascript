@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Name with form input</title>
+</head>
+<body>
+
+    <h2 id="show">Name with Form input</h2>
+    <script>
+        function fullname(){
+
+            var f = document.getElementById('fname').value;
+            var l = document.getElementById('lname').value;
+            var full =  "Your Fullname is : " + f + " " + l;
+            document.getElementById('show').innerHTML = full;
+
+
+        } 
+
+    </script>
+
+    <form action="">
+        <label for="">Frist Name:</label>
+        <input type="text" id="fname"  placeholder="Enter your Frist Name">
+        <br>
+        <br>
+        <label for="">Last Name:</label>
+        <input type="text" id="lname"  placeholder="Enter your Last Name">
+        <br>
+        <br>
+        <!-- <label for="">Gender:</label>
+        <br>
+        <label for="">Male</label>
+        <input type="radio" id="grnder">
+        <br>
+        <label for="">Female</label>
+        <input type="radio" id="grnder">
+        <br> -->
+        <input type="button" value="Cleck here" onclick="fullname()">
+    </form>
+    
+</body>
+</html>

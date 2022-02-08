@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From with Statement</title>
+</head>
+<body>
+    <h1>With Statement:</h1>
+
+    <script>
+        function getData(){
+            with(document.myform){
+                var fname = fristname.value;
+                var lname = lastname.value;
+                var add   = address.value; 
+                var gen   = gender.value;
+                var dist = district.value;
+                //alert(fname);
+            }
+            var data="";
+            data += "Frist Name: " + fname + "<br>";
+            data += "Last Name: " + lname + "<br>";
+            data += "Address: " + add + "<br>";
+            data += "Gender: " + gen + "<br>";
+            data += "District: " + dist + "<br>";
+            document.getElementById('show').innerHTML = data;
+        }
+
+    </script>
+
+<div id="show"></div>
+        <hr>
+        <br>
+        <br>
+
+    <form action="" name="myform">
+
+        <label for="">Frist Name:</label>
+        <input type="text" name="fristname" placeholder="Enter your Frist Name">
+        <br>
+        <br>
+        <label for="">Last Name:</label>
+        <input type="text" name="lastname" placeholder="Enter your last Name">
+        <br>
+        <br>
+        <label for="">Address:</label><br>
+        <br>
+        <textarea name="address" id="" cols="30" rows="10" placeholder="Enter your Address"></textarea>
+        <br>
+        <br>
+        <label for="">Gender:</label>
+        Male <input type="radio" value="male" name="gender">
+        Female <input type="radio" value="female" name="gerder">
+        <br>
+        <br>
+        <label for="">District:</label>
+        <select name="district">
+			<option>Dhaka</option>
+			<option>Madaripur</option>
+			<option>Sylhet</option>
+			<option>Gazipur</option>
+			<option>Kumilla</option>
+		</select>
+        <br>
+        <br>
+        <input type="button" value="SENT" onclick="getData()">
+
+    </form>
+    
+    
+</body>
+</html>

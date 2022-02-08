@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email validation</title>
+</head>
+<body>
+
+    <center>
+		<h2>Email | Password Validation:</h2>
+		<form name="myForm" >
+			Email ID: <input type="text" name="email" placeholder="Enter Email ID"/><br/><br/>
+			Password: <input type="password" name="pass" placeholder="Enter your password">
+			<br><br>
+			<input type="button" value="save" onclick="validate()" />
+		</form>
+	</center>
+
+  <!-------Js email validation------->
+
+  <script>
+      function validate(){
+          var mail = document.myForm.email.value;
+          var passw = document.myForm.pass.value.length;
+          var etype = mail.search(/[A-z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,4}/);
+          var status = false;
+
+          if(etype==-1){
+              alert("Email Address is invalid");
+              return false;
+          }else{
+              status = true;
+          }
+          if(passw<6){
+              alert("Password is must be 6 digit");
+              return false;
+          }else{
+              status = true;
+          }
+          if(status==true){
+              alert("all data is validate");
+          }
+      }
+  </script>
+    
+</body>
+</html>

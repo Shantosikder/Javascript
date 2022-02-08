@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Form validation</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var new_win;
+		var Cor = [];
+		function show_data(){
+
+			var myform = document.querySelector("myform");
+			var Name = document.myform.name.value;
+			var Contact =  document.myform.phone.value;
+			var remark = document.myform.Remark.value;
+			var Gender = document.myform.gender.value;
+			var Course = document.myform.course.value;
+			var location = document.myform.location.value;
+			//alert();
+
+			var Course = document.querySelectorAll("input[type=checkbox]");
+			for(i=0; i<Course.length; i++){
+				if(Course[i].checked == true){
+					Cor.push(Course[i].value);
+
+				}
+			}
+
+			new_win = window.open("", "", " left=350, right= 350 ,height=400, width=400");
+
+			new_win.document.write("<h2>New window</h2>");
+			
+			new_win.document.write("Name: " + Name + "<br>");
+			new_win.document.write("contact: " + Contact + "<br>");
+			new_win.document.write("remark: " + remark + "<br>");
+			new_win.document.write("Gender: " + Gender + "<br>");
+			new_win.document.write("Course: " + Cor + "<br>");
+			new_win.document.write("location: " + location + "<br>");
+		}
+		function close_data(){
+			new_win.close();
+		}
+	</script>
+
+	<center>
+		<h1>Form validaton:</h1>
+		<form name="myform">
+		<label>Name:</label>
+		<input type="text" name="name" placeholder="Enter youdr name">
+		<br>
+		<br>
+		<label>Contact:</label>
+		<input type="text" name="phone" placeholder="Enter youdr number">
+		<br>
+		<br>
+		<label>Remark:</label><br>
+		<textarea name="Remark" cols="30" rows="5" placeholder="Enter youdr message"></textarea>
+		<br>
+		<br>
+		<label>Gender:</label>
+		Male<input type="radio" name="gender" value="Male">
+		Female <input type="radio" name="gender" value="Female">
+		<br>
+		<br>
+		<label>Course:</label>
+		NT<input type="checkbox" name="course" value="NT">
+		IAD<input type="checkbox" name="course" value="IAD">
+		DDD<input type="checkbox" name="course" value="DDD">
+		ESAD<input type="checkbox" name="course" value="ESAD">
+		<br>
+		<br>
+		<label>Location:</label>
+		 <select name="location">
+		 	<option disabled="Seclect One">Seclect One</option>
+		 	<option value="Banani">Banani</option>
+		 	<option value="Dhanmondi">Dhanmondi</option>
+		 	<option value="Mirpur-2">Mirpur-2</option>
+		 </select>
+		 <br>
+		 <br>
+		 <input type="button" name="submit" value="Open" onclick="show_data()">
+		 <input type="button" name="submit" value="Close" onclick="close_data()">
+	</form>
+	</center>
+
+</body>
+</html>

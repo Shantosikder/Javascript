@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>New Window Data View from form value</h1>
+
+	<table>
+		<form action="" name="myform">
+			<tr>
+				<td>Name: </td>
+				<td><input type="text" placeholder="Enter your name" name="sn"></td>
+			</tr>
+			<tr>
+				<td>Email: </td>
+				<td><input type="text" placeholder="Enter your email" name="mail"></td>
+			</tr>
+			<tr>
+				<td>Contact: </td>
+				<td><input type="text" placeholder="Enter your number" name="num"></td>
+			</tr>
+			<tr>
+				<td>Password: </td>
+				<td><input type="password" placeholder="Enter your password" name="pass"></td>
+			</tr>
+			<tr>
+				<td>Gender: </td>
+				<td>
+					Male <input type="radio" name="gender" value="Male">
+					Female <input type="radio" name="gender" value="Female">
+				</td>
+			</tr>
+			<tr>
+				<td>Course: </td>
+				<td>
+					NT<input type="checkbox" value="NT" name="course[]">
+					IAD<input type="checkbox" value="IAD" name="course[]">
+					DDD<input type="checkbox" value="DDD" name="course[]">
+					ESAD<input type="checkbox" value="ESAD" name="course[]">
+				</td>
+			</tr>
+			<tr>
+				<td>Location: </td>
+				<td>
+					<select name="loca" id="">
+						<option value="Banani">Banani</option>
+						<option value="Dhanmondi">Dhanmondi</option>
+						<option value="Mirpur">Mirpur</option>
+					</select>
+				</td>
+			</tr>
+		</form>
+	</table>
+	<input type="button" value="Confirm" onclick="formData()">
+
+
+	<script>
+		var newWin;
+		function formData(){
+		var a = document.myform.sn.value;
+		var b = document.myform.mail.value;
+		var c = document.myform.num.value;
+		var d = document.myform.pass.value;
+		var e = document.myform.gender.value;
+		var f = document.myform.loca.value;
+		var data = "";
+
+		newWin = window.open("", "", "height=400,width=400");
+
+		var corse = document.getElementsByName('course[]');
+		var len = corse.length;
+		for(var i=0; i<len; i++){
+			if(corse[i].checked){
+				data += corse[i].value + "<br>";
+			}
+		}
+		newWin.document.write("Your name is: " + a + "<br> <br>");
+		newWin.document.write("Your mail address is: " + b + "<br> <br>");
+		newWin.document.write("Your number is: " + c + "<br> <br>");
+		newWin.document.write("Your password is: " + d + "<br> <br>");
+		newWin.document.write("Your gender is: " + e + "<br> <br>");
+		newWin.document.write("Your selected course is: " + data + "<br> <br>");
+		newWin.document.write("Your location is: " + f + "<br> <br>");
+		
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>prompt input valu</title>
+</head>
+<body>
+	<h1 id="demo"></h1>
+	<script>
+
+	// var frist =	prompt("Enter your frist name", "");
+	// var last =	prompt("Enter your last name", "");
+
+	// var welcome = frist + " " + last + " welcome to javascript";
+	// document.getElementById('demo').innerHTML = welcome;
+	</script>
+	
+	<script>
+
+		var x =	prompt("Enter your Frist number", "");
+		var y =	prompt("Enter your Last number", "");
+
+		x = Number(x); //parseInt()
+		y = Number(y);
+
+		var z = x + y;
+
+		var  result = "Frist Number is: " + x + "<br>";
+		 	 result += "Secend Number is: " + y + "<br>";
+		 	 result += "Total: " + z;
+		 	 document.getElementById('demo').innerHTML = result;
+
+	</script>
+</body>
+</html>

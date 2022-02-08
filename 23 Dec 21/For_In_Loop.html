@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> For In Loop:</title>
+</head>
+<body>
+
+	<h1 id="demo"> For In Loop:</h1>
+
+	<script type="text/javascript">
+		const person = {fristname:"Shanto" , lastname:"Sikder" , Age:23};
+
+		let txt = "";
+		for (let x in person){
+			txt += person[x] + "<br>";
+		}
+
+		document.getElementById('demo').innerHTML = txt;
+
+		// object thake data input
+		
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Factrial</title>
+</head>
+<body>
+
+	<h2>Factrial Number:</h2>
+
+	
+	<script type="text/javascript">
+
+		var x = prompt("Enter your factrial number: ", "");
+		function factrial(x)
+		{
+			if (x === 0)
+			{
+				return 1;
+			}
+			return x * factrial(x - 1);
+		}
+		//document.write(factrial(4));
+		//document.getElementById('show').innerHTML = factrial(x);
+		document.write( x  +  " Enter your factrial value is : " +  factrial(x))
+
+	</script>
+	
+</body>
+</html>

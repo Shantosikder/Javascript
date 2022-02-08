@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt</title>
+</head>
+<body>
+    <h1 id="demo"></h1>
+    <!-- <script>
+
+        var frist = prompt("Enter your frist name: ", " ");
+        var last = prompt("Enter your last name: ", "");
+
+        var wellcome = frist + " " + last + "  wellcome to your javascript";
+        document.getElementById('demo').innerHTML = wellcome;
+
+    </script>
+     -->
+
+
+     <script>
+
+         var x = prompt("Frist Number is: ", " ");
+         var y = prompt("Secend Number is: ", " ");
+         var z = prompt("Thard Number is: ", " ");
+
+         y = Number(y); 
+         x = Number(x);
+         z = Number(z); 
+ 
+
+         var r = x + y + z;
+
+         var result = "Frist Number is: " + x + "<br>";
+		 	 result += "Secend Number is: " + y + "<br>";
+		 	 result += "Thard Number is: " + z + "<br>";
+		 	 result += "Total: " + r; 
+
+		 	 document.getElementById('demo').innerHTML = result;
+
+     </script>
+</body>
+</html>

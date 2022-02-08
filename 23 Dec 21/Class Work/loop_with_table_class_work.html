@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Loop</title>
+</head>
+<body>
+<script type="text/javascript">
+
+	document.write("<table><tr><th>Number</th><th>Name</th></tr>");
+
+	var Name = ["shanto", "Rana", "Waliul","Mizan", "Fehor", "Muntasir"];
+
+	for(let i=0; i<Name.length; i++){
+		document.write("<tr>");
+		document.write("<td>" + (i+1) + "</td>");
+		document.write("<td>" + Name[i] + "</td>"); //add order list
+		document.write("<tr>");
+	}
+
+	document.write("</table>");
+
+</script>
+</body>
+</html>

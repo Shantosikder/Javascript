@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registation Form validaton</title>
+</head>
+<body>
+
+    <table>
+        <h2>Form | Validation:</h2>
+        <form action="" name="myform">
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="sname" placeholder="Enter your name"></td>
+            </tr>
+            <tr>
+                <td>Father's Name:</td>
+                <td><input type="text" name="fname" placeholder="Enter your Fathers name"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" name="email" placeholder="Enter your Email"></td>
+            </tr>
+            <tr>
+                <td>Phone:</td>
+                <td><input type="text" name="phone" placeholder="Enter your phone number"></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    Male<input type="radio" name="gender" value="Male">
+                    Female<input type="radio" name="gender" value="Female">
+                </td>
+            </tr>
+            <tr>
+                <td>Course:</td>
+                <td>
+                    CSE<input type="checkbox" value="CSE" name="course[]">
+                    EEE<input type="checkbox" value="CSE" name="course[]">
+                    ENG<input type="checkbox" value="CSE" name="course[]">
+                    Textail<input type="checkbox" value="CSE" name="course[]">
+                    LLB<input type="checkbox" value="CSE" name="course[]">
+                </td>
+            </tr>
+            <tr>
+                <td>District:</td>
+                <td>
+                    <select name="dist">
+                        <option disabled="Select one">Select one</option>
+                        <option value="Dhaka">Dhaka</option>
+                        <option value="Rangpur">Rangpur</option>
+                        <option value="Rajshahi">Rajshahi</option>
+                        <option value="Dinajpur">Dinajpur</option>
+                        <option value="Sylhet">Sylhet</option>
+                    </select>
+                </td>
+            </tr>
+        </form>
+    </table>
+    <br>
+    <input type="button" value="SUBMIT" onclick="validation()">
+
+    <script>
+        function validation(){
+            var name = document.myform.sname.value;
+            var Fname = document.myform.fname.value;
+            var Email = document.myform.email.value;
+            var Phone = document.myform.phone.value;
+            var Gender = document.myform.gender.value;
+            var dist = document.myform.dist.value;
+            //alert();
+
+            var data = "";
+
+            var course = document.getElementsByName('course[]');
+            var len = course.length;
+            for(i = 0; i<len; i++){
+                if(course[i].checked){
+                    data += course[i].value;
+                }
+            }
+            if(name == null | name == ""){
+                alert("Enter your name");
+                return false;
+            }else if(Fname == null | Fname == ""){
+                alert("Enter your father's name");
+                return false;
+            }else if(Email == null | Email == ""){
+                alert("Enter your Email");
+                return false;
+            }else if(Phone == null | Phone == ""){
+                alert("Enter your number");
+                return false;
+            }else if(Gender == null | Gender == ""){
+                alert("Enter your gender");
+                return false;
+            }else if (data == null | data == "") {
+				alert("Select your Course");
+				return false;	
+            }else if(dist == null | dist == ""){
+                alert("Enter your district");
+                return false;
+            }else{
+                alert("Success submit your data");
+                return true;
+            }
+        }
+    </script>
+    
+</body>
+</html>

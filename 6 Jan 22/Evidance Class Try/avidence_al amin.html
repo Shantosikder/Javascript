@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+		}
+		body{
+			width: 500px;
+			margin: 10px auto;
+			border: 1px solid skyblue;
+			padding: 30px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Student Registration form</h1>
+
+	<form action="" name="regisForm">
+		<label for="name">Name </label>
+		<input type="text" name="fullname" placeholder="enter your name"><br>
+		<label for="email">Email </label>
+		<input type="email" name="email" placeholder="enter your email address"><br>
+		<label for="number">Mobile No</label>
+		<input type="number" name="number"><br>
+		<label for="address">Address</label>
+		<textarea name="address" id="" cols="20" rows="5"></textarea><br>
+		<label for="jsc"><input type="checkbox" name="jsc" value="JSC"> JSC</label>
+		<label for="ssc"><input type="checkbox" name="ssc" value="SSC"> SSC</label>
+		<label for="hsc"><input type="checkbox" name="hsc" value="HSC"> HSC</label><br>
+		<button type="button" onclick="showData()">Submit</button>
+		<button type="button" onclick="closeWin()">Close Window</button>
+	</form>
+
+
+	<script>
+		let newWin;
+		let showEdu = [];
+		function showData(){
+			let regisForm = document.querySelector("#regisForm");
+			let fullName = document.regisForm.fullname.value;
+			let email = document.regisForm.email.value;
+			let number = document.regisForm.number.value;
+			let address = document.regisForm.address.value;
+
+			let edu = document.querySelectorAll("input[type=checkbox]");
+			for(let i = 0; i < edu.length; i++){
+				if(edu[i].checked == true){
+					showEdu.push(edu[i].value);
+				}
+			}
+
+			newWin = window.open("", "", "height=400, width=300");
+
+			newWin.document.write(`
+				Your full Name is : ${fullName} <br>
+				Your Email is : ${email} <br>
+				Your number is : ${number} <br>
+				Your address is : ${address} <br>
+				Your Education is : ${showEdu}
+				`);
+		}
+		function closeWin(){
+			newWin.close();
+		}
+	</script>
+</body>
+</html>

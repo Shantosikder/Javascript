@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>var function</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+	var Tax = .07
+    function addTax(item){
+        var Total = item + (item * Tax);
+        //var NewTotal = Math.floor(Total); //uper valu return kore
+		//var NewTotal = Math.ceil(Total);  //lower valu return kore
+		//var NewTotal = Math.round(Total); //.50 up korle 1 valu up kore
+		var NewTotal = Math.trunc(Total); //  . ar porar valu show kore nah----integar valu return kore
+
+		alert(NewTotal);
+    }
+
+</script>
+
+<button onclick="addTax(94)">Click Here</button>
+
+
+</body>
+</html>

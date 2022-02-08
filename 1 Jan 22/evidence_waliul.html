@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body> 
+	<h1>Form</h1>
+
+	<div id="show"></div>
+	<form action="" name="myform">
+		Name: <input type="text" name="fullname">
+		Contact: <input type="text" name="contact"><br><br>
+		<textarea name="remark" id="" cols="25" rows="5" placeholder="Remarks"></textarea><br>
+		Gender: 
+		<label for="">Male</label><input type="radio" value="Male" name="gender">
+		<label for="">Female</label><input type="radio" value="Female" name="gender"><br><br>
+		Course : 
+		<input type="checkbox" name="course">NT
+		<input type="checkbox" name="">IAD
+		<input type="checkbox" name="">DDD
+		<input type="checkbox" name="">ESAD 
+		<br><br>
+		Location: 
+		<select name="location" id="">
+			<option>Banani</option>
+			<option>Dhanmondi</option>
+			<option>Mirpur</option>
+		</select><br><br>
+		<input type="button" value="SEND" onclick="getData()">
+	</form>
+
+
+	<script>
+		function getData(){
+			with (document.myform){
+				var nam = fullname.value;
+				var cont = contact.value;
+				var remar = remark.value;
+				var gen = gender.value;
+				var cors = course.value;
+				var loca = location.value;
+			}
+			var data = "";
+			data += "Name: " + nam + "<br>" + "<br>";
+			data += "Contact: " + cont + "<br>" + "<br>";
+			data += "Remarks: " + remar + "<br>" + "<br>";
+			data += "Gender: " + gen + "<br>" + "<br>";
+			data += "Course: " + cors + "<br>" + "<br>";
+			data += "Location: " + loca + "<br>" + "<br>";
+
+			document.getElementById('show').innerHTML = data;
+			// console.log(data);
+		}
+	</script> 
+
+
+	<!-- <h2>Prime Number check</h2>
+	<form action="" name="prime" onsubmit="alert(primeCheck())">
+		<input type="text" name="number"><br>	
+		<input type="submit" name="submit" value="CHECK">
+	</form>
+
+	<script>
+		function primeCheck() {
+			var x = document.prime.number.value;
+			if(x==0){
+				return "you can not input 0";
+			}else if(x==1){
+				return "1 is not a prime number";
+			}else if(x==2){
+				return "2 is a prime number";
+			}else{
+				for(i=2; i<x; i++){
+					if(x%i==0){
+						return x + " is not a prime number.";
+					}
+				}
+				return x + " is a prime number."
+			}
+		}
+	</script> -->
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Form value new wondow</title>
+</head>
+<body>
+
+	<h2 style="text-align: center;">Form Values New Window:</h2>
+
+	<script type="text/javascript">
+
+		var mywin;
+		
+		function win_display(){
+
+			var frist = document.myform.fname.value;
+			var last =  document.myform.lname.value;
+			var play = document.myform.Cricket.value;
+
+			//var playfoot = document.myform.Football.value;
+
+			//alert(last);
+
+			mywin = window.open("", "", "top=250, left=250, height=300, width=600");
+
+			mywin.document.write("<h1>This is a new Window</h1>");
+
+			mywin.document.write("<p>Frist Name : " + frist + "</p" + "<br>");
+
+			mywin.document.write("<p>Last Name : " + last + "</p" + "<br>");
+			mywin.document.write("<p>Favourite Game : " + play + "</p" + "<br>");
+
+			//mywin.document.write("<p>Favourite Game : " + playfoot + "</p");
+
+		}
+
+		function win_close(){
+			mywin.close();
+		}
+
+	</script>
+
+	<center>
+		<form name="myform">
+			<label>Frist Name:</label>
+
+		<input type="text" name="fname" placeholder="First name"><br>
+		<br>
+		<br>
+		<label>Last Name:</label>
+		<input type="text" name="lname" placeholder="Last name"><br>
+		<br>
+		<br>
+		Cricket <input type="checkbox" name="Cricket" value="Cricket">
+		<br>
+		<br>
+		
+		<!-- Football <input type="checkbox" name="Football" value="Football">
+		<br>
+		<br>
+ -->
+		<!-- <button type="button" onclick="display()">Click here</button> -->
+
+		<button type="button" onclick="win_display()">Open</button>
+		<button type="button" onclick="win_close()">Close</button>
+		
+	</form>
+	</center>
+
+	
+
+</body>
+</html>

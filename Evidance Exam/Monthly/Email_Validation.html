@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Email Validation</title>
+</head>
+
+<body>
+	<center>
+		<h2>Email | Password Validation:</h2>
+		<form name="myForm" >
+			Email ID: <input type="text" name="email" placeholder="Enter Email ID"/><br/><br/>
+			Password: <input type="password" name="password" placeholder="Enter your password">
+			<br><br>
+			<input type="button" value="save" onclick="validate()" />
+		</form>
+	</center>
+	
+	<script>
+		function validate(){
+			var mail = document.myForm.email.value;
+			var pass = document.myForm.password.value.length;
+			var etype = mail.search(/[A-z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,4}/);
+			var status = false;
+			
+			if(etype==-1){
+				alert ("Email address is invalid");
+			 	return false;
+			 } else {
+			 	status = true;
+			 }
+			if(pass<8){
+				alert ("Password must be 8 character");
+			 	return false;
+			 } else {
+			 	status =  true;
+			 }
+			 if(status==true){
+			 	alert ("All data are validted");
+			 }
+		}
+	</script>
+</body>
+</html>

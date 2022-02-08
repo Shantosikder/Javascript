@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with new window</title>
+</head>
+<body>
+
+
+   <table>
+       <form action="" name="myform">
+           <tr>
+               <td>Name:</td>
+               <td><input type="text" name="name" placeholder="Enter your Name"></td>
+           </tr>
+           <tr>
+               <td>Email:</td>
+               <td><input type="text" name="email" placeholder="Enter your Email"></td>
+           </tr>
+           <tr>
+               <td>Contact:</td>
+               <td><input type="text" name="contact" placeholder="Enter your Number"></td>
+           </tr>
+           <tr>
+               <td>Gender:</td>
+               <td>
+                   Male <input type="radio" name="gender" value="Male">
+                   Female <input type="radio" name="gender" value="Female">
+                </td>
+           </tr>
+           <tr>
+               <td>Course:</td>
+               <td>
+                php<input type="checkbox" value="Php" name="course[]">
+                Python<input type="checkbox" value="python" name="course[]">
+                Java<input type="checkbox" value="Java" name="course[]">
+                C++<input type="checkbox" value="C++" name="course[]">
+                C#<input type="checkbox" value="C" name="course[]">
+               </td>
+           </tr>
+           <tr>
+               <td>Loctation:</td>
+               <td>
+                   <select name="loc" id="">
+                       <option disabled="select one">Select one</option>
+                    <option value="Mirpur-2">Mirpur-2</option>
+                    <option value="Gulshan">Gulshan-1</option>
+                    <option value="Badda">Badda</option>
+                    <option value="Dhanmondi">Dhanmondi</option>
+                    <option value="Polton">Polton</option>
+                   </select>
+               </td>
+           </tr>
+       </form>
+   </table><br>
+   <input type="button" value="open" onclick="showdata()">
+   <input type="button" value="close" onclick="closedata()">
+
+   <script>
+
+       var newwin;
+
+       function showdata(){
+           var Name = document.myform.name.value;
+           var Email = document.myform.email.value;
+           var Contact = document.myform.contact.value;
+           var Gender = document.myform.gender.value;
+           var location = document.myform.loc.value;
+
+           var data = "";
+
+            newwin = window.open("","", "height= 300, with=300");
+
+            var course = document.getElementsByName('course[]');
+            var len = course.length;
+            for(i=0; i<len; i++){
+                if(course[i].checked){
+                    data +=course[i].value;
+                }
+            }
+            
+
+            newwin.document.write("Name: " + Name + "<br>");
+            newwin.document.write("Email: " + Email + "<br>");
+            newwin.document.write("Contact: " + Contact + "<br>");
+            newwin.document.write("Gender: " + Gender + "<br>");
+            newwin.document.write("Location: " + location + "<br>");
+            newwin.document.write("Course: " + data + "<br>");
+
+       }
+       function closedata(){
+           newwin.close();
+       }
+   </script>
+    
+</body>
+</html>
